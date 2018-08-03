@@ -1,0 +1,42 @@
+# Test another type.
+# Test muti-line.
+type AnotherType {
+    # This is a number.
+    a: Int!
+    # This is a string.
+    b: String!
+    # This is a fake field.
+    c: FakeType!
+}
+
+# A character in the Star Wars.
+interface Character {
+    # The id of the character.
+    id: String!
+
+    # The name of the character.
+    name: String
+
+    # The friends of the character, or an empty list if they have none.
+    friends(
+        # If omitted, append some more info.
+        episode: Episode!,
+        # This is a fake arg.
+        fakeArg: FakeArg!
+    ): [Character]
+
+    # Which movies they appear in.
+    appearsIn: [Episode!]!
+
+    # All secrets about their past.
+    secretBackstory: String
+
+    # The stars of the character.
+    stars: String
+
+    # The commentary of the character.
+    commentary: String
+
+    # This is a another field.
+    another: AnotherType!
+}
